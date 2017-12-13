@@ -84,8 +84,7 @@
 - (UILabel *)label
 {
     if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
-        _label.center = self.view.center;
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 300, 200)];
         _label.numberOfLines = 0;
     }
     return _label;

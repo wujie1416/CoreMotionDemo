@@ -7,10 +7,12 @@
 //
 
 #import "GyroViewController.h"
+#import "BallView.h"
 #import <CoreMotion/CoreMotion.h>
 @interface GyroViewController ()
 @property (nonatomic, strong) CMMotionManager *manager;
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) BallView *ballView;
 @end
 
 @implementation GyroViewController
@@ -20,11 +22,13 @@
     self.title = @"陀螺仪";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.label];
+    [self.view addSubview:self.ballView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self useGyroPush];
+    [self playBall];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -73,6 +77,23 @@
 //    _label.text = [NSString stringWithFormat:@"X = %.04f,Y = %.04f,Z = %.04f",newestAccel.rotationRate.x,newestAccel.rotationRate.y,newestAccel.rotationRate.z];
 //}
 
+- (void)playBall
+{
+    if ([self.manager isGyroAvailable]) {
+        self.manager.deviceMotionUpdateInterval = 0.01;
+        NSOperationQueue *queue = [NSOperationQueue mainQueue];
+        [self.manager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable    error) {
+            self.ballView.acceleration  = motion.gravity;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.ballView updateLocation];
+            });
+        }];
+    } else {
+    NSLog(@"该设备不支持获取陀螺仪");
+    }
+}
+
+
 - (CMMotionManager *)manager
 {
     if (!_manager) {
@@ -84,12 +105,17 @@
 - (UILabel *)label
 {
     if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
-        _label.center = self.view.center;
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 300, 200)];
         _label.numberOfLines = 0;
     }
     return _label;
 }
 
-
+- (BallView *)ballView
+{
+    if (!_ballView) {
+        _ballView = [[BallView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    }
+    return _ballView;
+}
 @end

@@ -76,11 +76,11 @@
     }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    CMAccelerometerData *newestAccel = _manager.accelerometerData;
-    _label.text = [NSString stringWithFormat:@"X = %.04f,Y = %.04f,Z = %.04f",newestAccel.acceleration.x,newestAccel.acceleration.y,newestAccel.acceleration.z];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    CMAccelerometerData *newestAccel = _manager.accelerometerData;
+//    _label.text = [NSString stringWithFormat:@"X = %.04f,Y = %.04f,Z = %.04f",newestAccel.acceleration.x,newestAccel.acceleration.y,newestAccel.acceleration.z];
+//}
 
 - (CMMotionManager *)manager
 {

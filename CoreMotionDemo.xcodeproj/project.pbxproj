@@ -16,6 +16,7 @@
 		F4D9F0041FDFACBE00F37807 /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F0031FDFACBE00F37807 /* AccelerometerViewController.m */; };
 		F4D9F0071FDFACDD00F37807 /* GyroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F0061FDFACDD00F37807 /* GyroViewController.m */; };
 		F4D9F00A1FDFAD2100F37807 /* MagnetometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F0091FDFAD2100F37807 /* MagnetometerViewController.m */; };
+		F4E1D4501FE0D45D009E444D /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1D44F1FE0D45D009E444D /* BallView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		F4D9F0061FDFACDD00F37807 /* GyroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GyroViewController.m; sourceTree = "<group>"; };
 		F4D9F0081FDFAD2100F37807 /* MagnetometerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagnetometerViewController.h; sourceTree = "<group>"; };
 		F4D9F0091FDFAD2100F37807 /* MagnetometerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagnetometerViewController.m; sourceTree = "<group>"; };
+		F4E1D44E1FE0D45D009E444D /* BallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallView.h; sourceTree = "<group>"; };
+		F4E1D44F1FE0D45D009E444D /* BallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				F4D9F0031FDFACBE00F37807 /* AccelerometerViewController.m */,
 				F4D9F0051FDFACDD00F37807 /* GyroViewController.h */,
 				F4D9F0061FDFACDD00F37807 /* GyroViewController.m */,
+				F4E1D44E1FE0D45D009E444D /* BallView.h */,
+				F4E1D44F1FE0D45D009E444D /* BallView.m */,
 				F4D9F0081FDFAD2100F37807 /* MagnetometerViewController.h */,
 				F4D9F0091FDFAD2100F37807 /* MagnetometerViewController.m */,
 				F4D9EFF21FDF757E00F37807 /* Main.storyboard */,
@@ -159,6 +164,7 @@
 			files = (
 				F4D9EFF11FDF757E00F37807 /* ViewController.m in Sources */,
 				F4D9EFFC1FDF757E00F37807 /* main.m in Sources */,
+				F4E1D4501FE0D45D009E444D /* BallView.m in Sources */,
 				F4D9F00A1FDFAD2100F37807 /* MagnetometerViewController.m in Sources */,
 				F4D9F0041FDFACBE00F37807 /* AccelerometerViewController.m in Sources */,
 				F4D9EFEE1FDF757E00F37807 /* AppDelegate.m in Sources */,
